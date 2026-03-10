@@ -1,4 +1,4 @@
-# Temporary simplified config to avoid linker issues
+# Simplified config for CI (wild linker not available)
 [build]
 incremental = false
 
