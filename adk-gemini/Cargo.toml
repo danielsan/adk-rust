@@ -22,7 +22,7 @@ license = "Apache-2.0"
 repository = "https://github.com/zavora-ai/adk-rust"
 
 [features]
-default = ["studio"]
+default = ["studio", "vertex"]
 studio = []
 vertex = ["dep:google-cloud-aiplatform-v1", "dep:google-cloud-auth", "dep:google-cloud-gax"]
 

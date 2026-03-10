@@ -320,9 +320,11 @@ pub enum Error {
     },
 
     #[snafu(display("google cloud credentials returned NotModified without cached headers"))]
+    #[cfg(feature = "vertex")]
     GoogleCloudCredentialHeadersUnavailable,
 
     #[snafu(display("failed to parse google cloud credentials JSON"))]
+    #[cfg(feature = "vertex")]
     GoogleCloudCredentialParse {
         source: serde_json::Error,
     },
@@ -340,35 +342,43 @@ pub enum Error {
     },
 
     #[snafu(display("failed to serialize google cloud request"))]
+    #[cfg(feature = "vertex")]
     GoogleCloudRequestSerialize {
         source: serde_json::Error,
     },
 
     #[snafu(display("failed to deserialize google cloud request"))]
+    #[cfg(feature = "vertex")]
     GoogleCloudRequestDeserialize {
         source: serde_json::Error,
     },
 
     #[snafu(display("failed to serialize google cloud response"))]
+    #[cfg(feature = "vertex")]
     GoogleCloudResponseSerialize {
         source: serde_json::Error,
     },
 
     #[snafu(display("failed to deserialize google cloud response"))]
+    #[cfg(feature = "vertex")]
     GoogleCloudResponseDeserialize {
         source: serde_json::Error,
     },
 
     #[snafu(display("google cloud request payload is not an object"))]
+    #[cfg(feature = "vertex")]
     GoogleCloudRequestNotObject,
 
     #[snafu(display("google cloud configuration is required for this authentication mode"))]
+    #[cfg(feature = "vertex")]
     MissingGoogleCloudConfig,
 
     #[snafu(display("google cloud authentication is required for this configuration"))]
+    #[cfg(feature = "vertex")]
     MissingGoogleCloudAuth,
 
     #[snafu(display("service account JSON is missing required field 'project_id'"))]
+    #[cfg(feature = "vertex")]
     MissingGoogleCloudProjectId,
 
     #[snafu(display("api key is required for this configuration"))]
